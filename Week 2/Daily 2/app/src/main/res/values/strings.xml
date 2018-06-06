@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_activity_label">Choose Activity</string>
+    <string name="photo_button">Photo</string>
+    <string name="emi_calculator_button">EMI Calculator</string>
+    <string name="address_book_button">Address book</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="submit">Submit</string>
+    <string name="monthly_amount_label">Monthly Amount:</string>
+    <string name="emi">EMI:</string>
+    <string name="month">Month:</string>
+    <string name="view_entries">View Entries</string>
+    <string name="no_contacts">No Contacts</string>
+    <string name="city">City</string>
+    <string name="share_text">Share Text</string>
+    <string name="enter_text">Enter Text</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="call_number">Call Number</string>
+</resources>

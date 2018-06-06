@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.EMIActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/monthly_amount_label"
+        android:textSize="15pt" />
+
+    <EditText
+        android:id="@+id/etMonthlyAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="15pt" />
+
+    <SeekBar
+        android:id="@+id/seekBarEmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="12"
+        android:min="1"
+        android:progress="1" />
+
+    <TextView
+        android:id="@+id/tvMonths"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/month"
+        android:textSize="15pt" />
+
+    <TextView
+        android:id="@+id/tvEmiAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/emi"
+        android:textSize="15pt" />
+
+</LinearLayout>
