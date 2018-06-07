@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,8 +14,6 @@ import com.example.admin.progressbars.utils.HandlerUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class MainActivity extends AppCompatActivity implements Handler.Callback {
 
@@ -29,10 +26,14 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
     private TextView threadLabel2;
     private TextView threadLabel3;
     private TextView threadLabel4;
-    private TextView time1;
-    private TextView time2;
-    private TextView time3;
-    private TextView time4;
+    private TextView tvTime1;
+    private TextView tvTime2;
+    private TextView tvTime3;
+    private TextView tvTime4;
+    public static final int ID_1 = 1;
+    public static final int ID_2 = 2;
+    public static final int ID_3 = 3;
+    public static final int ID_4 = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,37 +48,65 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
         threadLabel2 = findViewById(R.id.tvThreadLabel2);
         threadLabel3 = findViewById(R.id.tvThreadLabel3);
         threadLabel4 = findViewById(R.id.tvThreadLabel4);
-        time1 = findViewById(R.id.tvTimeLabel1);
-        time2 = findViewById(R.id.tvTimeLabel2);
-        time3 = findViewById(R.id.tvTimeLabel3);
-        time4 = findViewById(R.id.tvTimeLabel4);
+        tvTime1 = findViewById(R.id.tvTimeLabel1);
+        tvTime2 = findViewById(R.id.tvTimeLabel2);
+        tvTime3 = findViewById(R.id.tvTimeLabel3);
+        tvTime4 = findViewById(R.id.tvTimeLabel4);
     }
 
     public void onStartTasks(View view) {
-        int time1 = (int)Math.random() * 30 + 5;
-        ProgressRunnable runnable1 = new ProgressRunnable(handler, 111);
-        ProgressRunnable runnable2 = new ProgressRunnable(handler, 222);
-        ProgressRunnable runnable3 = new ProgressRunnable(handler, 333);
-        ProgressRunnable runnable4 = new ProgressRunnable(handler, 444);
+        progBar1.setProgress(0);
+        progBar2.setProgress(0);
+        progBar3.setProgress(0);
+        progBar4.setProgress(0);
+        int time1 = (int)(Math.random() * 20) + 5;
+        int time2 = (int)(Math.random() * 20) + 5;
+        int time3 = (int)(Math.random() * 20) + 5;
+        int time4 = (int)(Math.random() * 20) + 5;
+        progBar1.setMax(time1);
+        progBar2.setMax(time2);
+        progBar3.setMax(time3);
+        progBar4.setMax(time4);
+        ProgressRunnable runnable1 = new ProgressRunnable(handler, time1, ID_1);
+        ProgressRunnable runnable2 = new ProgressRunnable(handler, time2, ID_2);
+        ProgressRunnable runnable3 = new ProgressRunnable(handler, time3, ID_3);
+        ProgressRunnable runnable4 = new ProgressRunnable(handler, time4, ID_4);
         List<Runnable> runnables = new ArrayList<Runnable>();
-//        BlockingQueue<Runnable> progressQueue = new LinkedBlockingQueue<Runnable>();
-//        progressQueue.add(runnable1);
-//        progressQueue.add(runnable2);
-//        progressQueue.add(runnable3);
-//        progressQueue.add(runnable4);
         runnables.add(runnable1);
         runnables.add(runnable2);
         runnables.add(runnable3);
         runnables.add(runnable4);
-//        HandlerUtils.with(handler).executeTasks(runnables);
-        HandlerUtils.with(handler).executeTasks(runnables);
+        HandlerUtils.with(handler, runnables).executeTasks();
     }
 
     @Override
     public boolean handleMessage(Message msg) {
-        int progress = msg.getData().getInt(Constants.Key.PROGRESS_CURRENT);
-//        progBar1.setProgress(progress);
-        Log.d("MAINTAG", msg.getData().getString("data"));
+        int currentTime = msg.getData().getInt(Constants.Key.PROGRESS_CURRENT);
+        int totalTime = msg.getData().getInt(Constants.Key.PROGRESS_TOTAL);
+        int remainingTime = totalTime - currentTime;
+        int id = msg.getData().getInt(Constants.Key.PROGRESS_ID);
+        switch (id){
+            case ID_1 : {
+                tvTime1.setText("" + remainingTime);
+                progBar1.setProgress(currentTime);
+                break;
+            }
+            case ID_2 : {
+                tvTime2.setText("" + remainingTime);
+                progBar2.setProgress(currentTime);
+                break;
+            }
+            case ID_3 : {
+                tvTime3.setText("" + remainingTime);
+                progBar3.setProgress(currentTime);
+                break;
+            }
+            case ID_4 : {
+                tvTime4.setText("" + remainingTime);
+                progBar4.setProgress(currentTime);
+                break;
+            }
+        }
         return false;
     }
 }
