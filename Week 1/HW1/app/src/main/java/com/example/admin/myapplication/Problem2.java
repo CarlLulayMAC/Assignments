@@ -9,7 +9,7 @@ public class Problem2 {
         letterCount("adbfedfbeffecfdefdcec");
     }
 
-    public static void letterCount(String input){
+    public static Object letterCount(String input){
         HashMap<String,Integer> table = new HashMap<String,Integer>();
         int length = input.length();
         StringBuilder sb = new StringBuilder(input);
@@ -30,4 +30,5 @@ public class Problem2 {
                 System.out.println(key + "=" + value);
         }
     }
+    return
 }

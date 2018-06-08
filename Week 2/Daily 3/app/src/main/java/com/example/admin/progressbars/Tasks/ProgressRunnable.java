@@ -25,6 +25,7 @@ public class ProgressRunnable implements Runnable {
                 e.printStackTrace();
             }
             this.progressCurrentTime++;
+            // TODO Pass back something like Thread.currentThread().getName()
             HandlerUtils.getInstance().sendMessage(id, progressCurrentTime, progressTotalTime);
         }
 

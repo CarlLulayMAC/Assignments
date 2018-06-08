@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvThreadLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TV1"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvTimeLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:padding="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvThreadLabel1" />
+
+    <TextView
+        android:id="@+id/tvThreadLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar1"
+        android:text="TV2"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvTimeLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/progressBar1"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:padding="10sp"
+        android:id="@+id/progressBar2"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvThreadLabel2" />
+
+    <TextView
+        android:id="@+id/tvThreadLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar2"
+        android:text="TV3"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvTimeLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/progressBar2"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:padding="10sp"
+        android:id="@+id/progressBar3"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tvThreadLabel3" />
+
+    <TextView
+        android:id="@+id/tvThreadLabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar3"
+        android:text="TV4"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvTimeLabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/progressBar3"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:padding="10sp"
+        android:id="@+id/progressBar4"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvThreadLabel4" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar4"
+        android:text="Start Tasks"
+        android:onClick="onStartTasks"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"/>
+
+</RelativeLayout>
