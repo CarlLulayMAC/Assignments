@@ -1,0 +1,19 @@
+package com.example.admin.retrofit.model;
+
+import com.example.admin.retrofit.model.Employee;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
+public class EmployeeList {
+    @SerializedName("employeeList")
+    private ArrayList<Employee> employeeList;
+
+    public ArrayList<Employee> getEmployeeArrayList() {
+        return employeeList;
+    }
+
+    public void setEmployeeArrayList(ArrayList<Employee> employeeArrayList) {
+        this.employeeList = employeeArrayList;
+    }
+}
