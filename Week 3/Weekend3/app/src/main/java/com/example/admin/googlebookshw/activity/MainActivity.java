@@ -24,13 +24,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//API KEY: AIzaSyBN6GpgnKJw39rsECTUHtCsvhcq59RFUSE
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private static final String TAG = MainActivity.class.getSimpleName() + "_TAG";
     private BookAdapter adapter;
     private RecyclerView recyclerView;
-    public static final String API_KEY = "AIzaSyBN6GpgnKJw39rsECTUHtCsvhcq59RFUSE";
+    public static final String API_KEY = "TurdFart";
     GetBookDataService service;
     private int MAX_RESULTS = 40; //40 is the max
     SearchView searchView;
