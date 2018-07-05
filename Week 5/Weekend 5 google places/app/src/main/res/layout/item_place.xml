@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><!--title --><!--author--><!--thumbnail--><!--num_comments--><!--ups--><!--downs-->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="3dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="wrap_content"
+            android:maxHeight="80dp"
+            android:maxWidth="80dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_toEndOf="@+id/ivIcon"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_toEndOf="@+id/ivIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_margin="3dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDirections"
+
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:text="@string/get_directions"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
