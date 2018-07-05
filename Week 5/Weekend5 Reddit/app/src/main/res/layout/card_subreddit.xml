@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--title --><!--author--><!--thumbnail--><!--num_comments--><!--ups--><!--downs-->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="3dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_toEndOf="@+id/ivThumbnail"
+            android:text="Title Placeholder"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_toEndOf="@+id/ivThumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_margin="3dp"
+            android:text="Author Placeholder"
+            android:textAllCaps="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_toEndOf="@+id/ivThumbnail"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvAuthor"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:id="@+id/tvNumComments"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="xxx comments" />
+
+            <TextView
+                android:id="@+id/tvUpvotes"
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAuthor"
+                android:layout_marginRight="6dp"
+                android:text="45 upvotes" />
+
+            <TextView
+                android:id="@+id/tvDownvotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginRight="6dp"
+                android:text="10 downvotes" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
