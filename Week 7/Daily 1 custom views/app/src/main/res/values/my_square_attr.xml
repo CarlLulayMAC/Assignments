@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyRectView">
+        <attr name="boxHeight" format="integer"/>
+        <attr name="boxWidth" format="integer"/>
+        <attr name="boxStartX" format="integer"/>
+        <attr name="boxStartY" format="integer"/>
+        <attr name="fillColor" format="color"/>
+
+
+
+    </declare-styleable>
+</resources>
