@@ -16,4 +16,8 @@
     <string name="multiply">*</string>
     <string name="equals">=</string>
     <string name="clear">clear</string>
+    <string name="squared">^2</string>
+    <string name="exponent">^x</string>
+    <string name="log">log</string>
+    <string name="sqroot">sqRoot</string>
 </resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:columnCount="5"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/inputView"
+        android:layout_columnSpan="5"
+        android:layout_gravity="fill"
+        android:layout_row="0"
+        android:background="@android:color/darker_gray"
+        android:textSize="20dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_columnSpan="5"
+        android:layout_gravity="fill|right"
+        android:layout_row="1"
+        android:background="@android:color/darker_gray"
+        android:textSize="20dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:onClick="onNumberClick"
+        android:text="@string/_1" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:onClick="onNumberClick"
+        android:text="@string/_2" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:onClick="onNumberClick"
+        android:text="@string/_3" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_column="3"
+        android:onClick="onOperatorClick"
+        android:text="@string/divide" />
+
+    <Button
+        android:id="@+id/btnSquare"
+        android:layout_gravity="fill"
+        android:onClick="onSquare"
+        android:text="@string/squared" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:onClick="onNumberClick"
+        android:text="@string/_4" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:onClick="onNumberClick"
+        android:text="@string/_5" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:onClick="onNumberClick"
+        android:text="@string/_6" />
+
+    <Button
+        android:id="@+id/btnMult"
+        android:layout_column="3"
+        android:onClick="onOperatorClick"
+        android:text="@string/multiply" />
+
+    <Button
+        android:id="@+id/btnSqRoot"
+        android:layout_gravity="fill_vertical"
+        android:onClick="onSquareRoot"
+        android:text="@string/sqroot" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:onClick="onNumberClick"
+        android:text="@string/_7" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:onClick="onNumberClick"
+        android:text="@string/_8" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:onClick="onNumberClick"
+        android:text="@string/_9" />
+
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_column="3"
+        android:onClick="onOperatorClick"
+        android:text="@string/minus" />
+
+    <Button
+        android:id="@+id/btnLog"
+        android:layout_gravity="fill_horizontal"
+        android:onClick="onLogClick"
+        android:text="@string/log" />
+
+    <Button
+        android:id="@+id/btn0"
+        android:onClick="onNumberClick"
+        android:text="@string/_0" />
+
+    <Button
+        android:id="@+id/btnEquals"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:onClick="onEqualsClick"
+        android:text="@string/equals" />
+
+    <Button
+        android:id="@+id/btnPlus"
+        android:layout_gravity="fill_vertical"
+        android:layout_rowSpan="2"
+        android:onClick="onOperatorClick"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:onClick="onClearClicked"
+        android:text="@string/clear" />
+
+</GridLayout>

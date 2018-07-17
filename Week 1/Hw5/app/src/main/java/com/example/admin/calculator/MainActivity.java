@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public void onNumberClick(View view) {
         // If the operator is the null character, then we know the user is entering a new
         // numerical value and we need to clear the previous results and inputString
-        if (this.operator == '\u0000' )
+        if (this.operator == '\u0000' && this.result != null)
             this.clear();
         // building the inputString string that will be displayed to the user
         this.inputString = this.inputString + ((Button) view).getText();
@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 this.result = this.inputValue * result;
             else if (this.operator == '/')
                 this.result = this.result / this.inputValue;
+            else if (this.operator == '^')
+                this.result = this.result / this.inputValue;
             this.resultView.setText(this.result.toString());
             this.valueString = this.result.toString();
             this.inputValue = this.result;
@@ -113,5 +115,71 @@ public class MainActivity extends AppCompatActivity {
         this.inputView.setText("");
         this.resultView.setText("");
         this.lastInputWasNumber = false;
+    }
+
+    public void onSquare(View view) {
+        if (this.inputValue != null) {
+            if (this.result == null)
+                this.result = this.inputValue;
+            this.result = this.result * this.result;
+            evaluate();
+            this.resultView.setText(this.result.toString());
+            this.valueString = this.result.toString();
+            this.inputValue = this.result;
+            // In the event that an operator key is used next, we are treating the result
+            // as if it were a number inputString
+            this.lastInputWasNumber = true;
+        }
+        // Updating display
+        if (this.result != null) {
+            this.inputString = "" + this.result;
+            this.inputView.setText(this.inputString);
+        }
+        //setting operator to null
+        this.operator = '\u0000';
+    }
+
+    public void onSquareRoot(View view) {
+        if (this.inputValue != null) {
+            if (this.result == null)
+                this.result = this.inputValue;
+            this.result = Math.sqrt(this.result);
+            evaluate();
+            this.resultView.setText(this.result.toString());
+            this.valueString = this.result.toString();
+            this.inputValue = this.result;
+            // In the event that an operator key is used next, we are treating the result
+            // as if it were a number inputString
+            this.lastInputWasNumber = true;
+        }
+        // Updating display
+        if (this.result != null) {
+            this.inputString = "" + this.result;
+            this.inputView.setText(this.inputString);
+        }
+        //setting operator to null
+        this.operator = '\u0000';
+    }
+
+    public void onLogClick(View view) {
+        if (this.inputValue != null) {
+            if (this.result == null)
+                this.result = this.inputValue;
+            this.result = Math.log(this.result);
+            evaluate();
+            this.resultView.setText(this.result.toString());
+            this.valueString = this.result.toString();
+            this.inputValue = this.result;
+            // In the event that an operator key is used next, we are treating the result
+            // as if it were a number inputString
+            this.lastInputWasNumber = true;
+        }
+        // Updating display
+        if (this.result != null) {
+            this.inputString = "" + this.result;
+            this.inputView.setText(this.inputString);
+        }
+        //setting operator to null
+        this.operator = '\u0000';
     }
 }
