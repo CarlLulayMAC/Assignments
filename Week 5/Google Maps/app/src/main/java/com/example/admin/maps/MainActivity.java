@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .icon( BitmapDescriptorFactory.fromResource(R.drawable.star))
                 .rotation(20)
                 .draggable(false);
-
         Marker m = mMap.addMarker(markerOptions);
         m.showInfoWindow();
     }
